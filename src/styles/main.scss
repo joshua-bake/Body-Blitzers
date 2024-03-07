@@ -1,11 +1,26 @@
 p {
-    font-size: 10px;
+    font-size: .8rem;
+    color: black;
+}
+
+body {
+    background-image: url('src/assets/fitness-motto-background.jpeg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat;
+    opacity: .8;
+    padding: 5px;
 }
 
 section > h2 {
     text-align: center;
     font-size: 25px;
-    font-weight: bold;
+    color: rgb(29, 167, 167);
+}
+
+
+h3 {
+    text-transform: capitalize;
 }
 
 .card-image {

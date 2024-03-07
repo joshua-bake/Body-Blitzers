@@ -40,15 +40,20 @@ const Exercises = () => {
         setSearch(e.currentTarget.value)
     }
 
-function moreFilter() {
-
-}
+    function moreFilter() {
+        return exercises?.filter(library => {
+            return library.target.toLowerCase().includes(search.toLowerCase())
+        })
+    }
 
     function filterLibrary() {
         return exercises?.filter(library => {
             return library.name.toLowerCase().includes(search.toLowerCase())
         })
     }
+
+
+
 
     if (!exercises) {
         return <div>
@@ -71,7 +76,20 @@ function moreFilter() {
                             instruction={library.instructions}
                             targets={library.target.toUpperCase()}
                         />
-                        
+
+                    </div>
+                })}
+            </div>
+            <div className='columns is-multiline'>
+                {moreFilter()?.map(library => {
+                    return <div key={library} className='column is-one-quarter-desktop is-one-third-tablet'>
+                        <VideoLibrary
+                            name={library.name}
+                            image={library.gifUrl}
+                            instruction={library.instructions}
+                            targets={library.target.toUpperCase()}
+                        />
+
                     </div>
                 })}
             </div>

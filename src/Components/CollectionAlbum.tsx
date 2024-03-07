@@ -10,7 +10,7 @@ const CollectionAlbum = ({ name, image }: ICollectionAlbum) => {
     return <div>
         <div className="card is-active">
             <div className="card-header">
-                <h3 className="card-header-title">{name}testing</h3>
+                <h3 className="card-header-title">{name}</h3>
             </div>
             <div className="card-image">
                 <figure className="image">
