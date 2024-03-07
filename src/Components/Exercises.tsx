@@ -1,23 +1,16 @@
 import React from 'react'
 import VideoLibrary from './VideoLibrary';
+import Collection from './Collection';
 
-interface Iexercises {
+interface Exercises {
     name: string,
-    gifURL: string,
+    gifUrl: string,
     instructions: string,
-    bodyPart: string
+    bodyPart: string,
+    target: string
 }
 
 const Exercises = () => {
-
-
-    // [search, setSearch] = React.useState('')
-
-    // async function handleSearch() {
-    //     if (search) {
-    //         const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exercisesOptions)
-    //     }
-    // }
 
     const exercisesOptions = {
         method: 'GET',
@@ -28,11 +21,12 @@ const Exercises = () => {
         }
     };
 
-    const [exercises, setExercises] = React.useState()
+    const [exercises, setExercises] = React.useState<null | Array<Exercises>>(null)
+    const [search, setSearch] = React.useState('')
 
     React.useEffect(() => {
         async function fetchData() {
-            const resp = await fetch('https://exercisedb.p.rapidapi.com/exercises?limit=30', exercisesOptions)
+            const resp = await fetch('https://exercisedb.p.rapidapi.com/exercises?limit=40', exercisesOptions)
             const exercises = await resp.json()
             setExercises(exercises)
         }
@@ -41,6 +35,16 @@ const Exercises = () => {
 
     // console.log(exercises)
 
+    // Search function
+    function handleChange(e: any) {
+        setSearch(e.currentTarget.value)
+    }
+
+    function filterLibrary() {
+        return exercises?.filter(library => {
+            return library.name.toLowerCase().includes(search.toLowerCase())
+        })
+    }
 
     if (!exercises) {
         return <div>
@@ -48,22 +52,33 @@ const Exercises = () => {
         </div>
     }
 
-    return (
-        // <div>
-        //     <h2>Exercises Landing page</h2>
-        // </div>
-        // !Fix passing props
-        <section className="section">
-            <div className="container">
-                <div className="columns is-multiline">
-                    <VideoLibrary
-                        library={exercises}
-                    />
-                </div>
-            </div>
+    return <section className='section'>
+        <section>
+            <h2>Click on the cards below to view more or search for a specific exercise.</h2> <br />
         </section>
+        <div className='container'>
+            <input className='input mb-4' placeholder='Search Exercises' onChange={handleChange} value={search} />
+            <div className='columns is-multiline'>
+                {filterLibrary()?.map(library => {
+                    return <div key={library} className='column is-one-quarter-desktop is-one-third-tablet'>
+                        <VideoLibrary
+                            name={library.name}
+                            image={library.gifUrl}
+                            instruction={library.instructions}
+                            targets={library.target.toUpperCase()}
+                        />
+                    </div>
+                })}
+                {/* <Collection
+                    name={library.name}
+                    image={library.gifUrl}
+                /> */}
+            </div>
+        </div>
+    </section>
 
-    )
+
+
 }
 
 export default Exercises

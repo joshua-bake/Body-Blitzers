@@ -1,9 +1,20 @@
+p {
+    font-size: 10px;
+}
 
+section > h2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
 
+.card-image {
+padding: 20px;
+}
 
-
-
-
+.card {
+    border: 3px solid rgb(25, 230, 241);
+}
 
 // ! example on how to customize, skip to section "Add your own Bulma styles":
 // https://bulma.io/documentation/customize/with-sass-cli/

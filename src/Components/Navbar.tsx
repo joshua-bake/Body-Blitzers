@@ -19,28 +19,27 @@ function Navbar() {
                     <Link to='/' className="navbar-item">
                         Home
                     </Link>
-                    <div className="navbar-item has-dropdown is-hoverable">
-                        <Link to='/exercises' className="navbar-link">
+                    <div className="navbar-item">
+                        <Link to='/exercises' className="navbar-item">
                             Exercises
                         </Link>
-                        <div className="navbar-dropdown">
+                        {/* <div className="navbar-dropdown">
                             <Link to='/exercises/' className="navbar-item">
                                 Back
                             </Link>
                             <Link to='/exercises/' className="navbar-item">
                                 Cardio
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
-                    <Link to='/videolibrary' className="navbar-item">
-                        Video Library
+                    <Link to='/collection' className="navbar-item">
+                        Collection
                     </Link>
                 </div>
             </div>
         </nav>
         <hr className="navbar-divider" />
     </section>
-
 }
 
 export default Navbar
