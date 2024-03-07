@@ -23,18 +23,12 @@ function Navbar() {
                         <Link to='/exercises' className="navbar-item">
                             Exercises
                         </Link>
-                        {/* <div className="navbar-dropdown">
-                            <Link to='/exercises/' className="navbar-item">
-                                Back
-                            </Link>
-                            <Link to='/exercises/' className="navbar-item">
-                                Cardio
-                            </Link>
-                        </div> */}
                     </div>
-                    <Link to='/collection' className="navbar-item">
-                        Collection
-                    </Link>
+                    <div className='navbar-item'>
+                        <Link to='/collection' className="navbar-item">
+                            Collection
+                        </Link>
+                    </div>
                 </div>
             </div>
         </nav>

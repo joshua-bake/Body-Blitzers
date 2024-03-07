@@ -26,7 +26,7 @@ const Exercises = () => {
 
     React.useEffect(() => {
         async function fetchData() {
-            const resp = await fetch('https://exercisedb.p.rapidapi.com/exercises?limit=40', exercisesOptions)
+            const resp = await fetch('https://exercisedb.p.rapidapi.com/exercises?limit=28', exercisesOptions)
             const exercises = await resp.json()
             setExercises(exercises)
         }
@@ -40,6 +40,10 @@ const Exercises = () => {
         setSearch(e.currentTarget.value)
     }
 
+function moreFilter() {
+
+}
+
     function filterLibrary() {
         return exercises?.filter(library => {
             return library.name.toLowerCase().includes(search.toLowerCase())
@@ -48,7 +52,7 @@ const Exercises = () => {
 
     if (!exercises) {
         return <div>
-            <h1>loading....</h1>
+            <div className="lds-ripple"><div></div><div></div></div>
         </div>
     }
 
@@ -67,12 +71,9 @@ const Exercises = () => {
                             instruction={library.instructions}
                             targets={library.target.toUpperCase()}
                         />
+                        
                     </div>
                 })}
-                {/* <Collection
-                    name={library.name}
-                    image={library.gifUrl}
-                /> */}
             </div>
         </div>
     </section>

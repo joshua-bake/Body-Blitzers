@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Navbar from "./Components/Navbar"
 import Home from "./Components/Home"
 import Exercises from "./Components/Exercises"
-import VideoLibrary from "./Components/VideoLibrary"
 import Collection from "./Components/Collection"
 
 function App() {
@@ -16,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/exercises" element={<Exercises />} />
-          {/* <Route path="/collection" element={<Collection />} /> */}
+          <Route path="/collection" element={<Collection />} />
         </Routes>
       </main>
     </Router>
