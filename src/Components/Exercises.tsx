@@ -52,9 +52,6 @@ const Exercises = () => {
         })
     }
 
-
-
-
     if (!exercises) {
         return <div>
             <div className="lds-ripple"><div></div><div></div></div>
@@ -69,35 +66,30 @@ const Exercises = () => {
             <input className='input mb-4' placeholder='Search Exercises' onChange={handleChange} value={search} />
             <div className='columns is-multiline'>
                 {filterLibrary()?.map(library => {
-                    return <div key={library} className='column is-one-quarter-desktop is-one-third-tablet'>
+                    return <div className='column is-one-quarter-desktop is-one-third-tablet'>
                         <VideoLibrary
                             name={library.name}
                             image={library.gifUrl}
                             instruction={library.instructions}
                             targets={library.target.toUpperCase()}
                         />
-
                     </div>
                 })}
             </div>
             <div className='columns is-multiline'>
                 {moreFilter()?.map(library => {
-                    return <div key={library} className='column is-one-quarter-desktop is-one-third-tablet'>
+                    return <div className='column is-one-quarter-desktop is-one-third-tablet'>
                         <VideoLibrary
                             name={library.name}
                             image={library.gifUrl}
                             instruction={library.instructions}
                             targets={library.target.toUpperCase()}
                         />
-
                     </div>
                 })}
             </div>
         </div>
     </section>
-
-
-
 }
 
 export default Exercises
