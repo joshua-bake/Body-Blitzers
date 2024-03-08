@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from 'react-router-dom'
 
 interface IVideoLibrary {
     name: string,
@@ -13,6 +12,8 @@ const VideoLibrary = ({ name, image, instruction, targets }: IVideoLibrary) => {
 
     const [show, setShow] = React.useState(false)
     // console.log(show)
+
+    // function to show or hide elements on the cards
     function toggleState() {
         setShow(!show)
     }
@@ -32,7 +33,6 @@ const VideoLibrary = ({ name, image, instruction, targets }: IVideoLibrary) => {
             </div>
         </div>
     </div>
-
 }
 
 export default VideoLibrary

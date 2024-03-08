@@ -1,6 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
 
 const Home = () => {
 
@@ -8,16 +6,16 @@ const Home = () => {
         <section className="is-large">
             <div className='columns homeColumns'>
                 <div className='column is-half'>
-                    <section className="hero is-medium ">
-                        <div className="hero-body">
-                            <h1 className='has-text-weight-bold pb-5 is-size-1'>Body Blitzers</h1>
-                            <p className='has-text-primary-light'>Welcome to our curated online library where you can find some of the most common exercise movesets.</p>
-                        </div>
+                    <section className="hero is-medium pl-6">
+                        <h1 className='has-text-weight-bold pb-5 is-size-1'>Body Blitzers</h1>
+                        <p className='has-text-primary-light'>Welcome to our curated online library where you can find some of the most common exercise movesets.</p>
+                        <p className='has-text-primary-light'>Whether you're a beginner or veteran, there is something for everyone here regardless of skill level.</p>
+                        <img src="src/assets/fitness-motto-background.jpeg" alt="fitness-motto" />
                     </section>
                 </div>
                 <div className='column is-half'>
                     <figure className="image ">
-                        <img src="src/assets/logo-no-background.png" />
+                        <img className='pr-5 mt-5' src="src/assets/logo-no-background.png" alt='logo-no-background' />
                     </figure>
                 </div>
             </div>

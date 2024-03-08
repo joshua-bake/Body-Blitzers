@@ -1,5 +1,6 @@
 import React from 'react'
 import CollectionAlbum from './CollectionAlbum';
+import ScrollToTop from 'react-scroll-to-top';
 
 interface Collection {
     name: string,
@@ -36,16 +37,20 @@ const Collection = () => {
         </div>
     }
 
-    return <div className='columns is-multiline'>
-        {(exercises)?.map(catalog => {
-            return <div key={catalog} className='column is-one-quarter-desktop is-one-third-tablet'>
-                <CollectionAlbum
-                    name={catalog.name}
-                    image={catalog.gifUrl}
-                />
-            </div>
-        })}
-    </div>
+    return <section>
+        <h2 className='is-size-3 has-text-centered'>Welcome to Our Video Library</h2>
+        <div className='columns is-multiline'>
+            <ScrollToTop />
+            {(exercises)?.map(catalog => {
+                return <div className='column is-one-quarter-desktop is-one-third-tablet'>
+                    <CollectionAlbum
+                        name={catalog.name}
+                        image={catalog.gifUrl}
+                    />
+                </div>
+            })}
+        </div>
+    </section>
 }
 
 export default Collection

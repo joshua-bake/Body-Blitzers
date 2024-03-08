@@ -7,7 +7,6 @@ import Collection from "./Components/Collection"
 
 function App() {
 
-
   return (
     <Router>
       <Navbar />

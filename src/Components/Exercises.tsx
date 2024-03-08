@@ -1,6 +1,7 @@
 import React from 'react'
 import VideoLibrary from './VideoLibrary';
 import Collection from './Collection';
+import ScrollToTop from 'react-scroll-to-top'
 
 interface Exercises {
     name: string,
@@ -60,7 +61,7 @@ const Exercises = () => {
 
     return <section className='section'>
         <section>
-            <h2>Click on the cards below to view more or search for a specific exercise.</h2> <br />
+            <h2 className='is-size-3 has-text-centered'>Click on the cards below to view more or search for a specific exercise.</h2> <br />
         </section>
         <div className='container'>
             <input className='input mb-4' placeholder='Search Exercises' onChange={handleChange} value={search} />
@@ -88,6 +89,9 @@ const Exercises = () => {
                     </div>
                 })}
             </div>
+        </div>
+        <div>
+            <ScrollToTop />
         </div>
     </section>
 }

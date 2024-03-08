@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
     return <section>
-        <nav className="navbar has-background-primary-light has-shadow" role="navigation" aria-label="main navigation">
+        <nav className="navbar has-background-primary-light" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <a className="navbar-item ">
                     <img src="src/assets/body-blitzers-high-resolution-logo.jpeg" width="112" height="480" />
@@ -14,8 +14,8 @@ function Navbar() {
                 </a>
             </div>
             <div id="navbarBasicExample" className="navbar-menu">
-                <div className="navbar">
-                    <Link to='/' className="navbar-item has-background-primary-light is-active ">
+                <div className="navbar-item has-background-primary-light">
+                    <Link to='/' className="navbar-item">
                         Home
                     </Link>
                     <div className="navbar-item has-background-primary-light">

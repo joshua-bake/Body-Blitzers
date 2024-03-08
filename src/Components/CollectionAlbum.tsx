@@ -19,7 +19,6 @@ const CollectionAlbum = ({ name, image }: ICollectionAlbum) => {
             </div>
         </div>
     </div>
-
 }
 
 export default CollectionAlbum

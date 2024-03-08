@@ -16,12 +16,6 @@ body {
     top: 50px;
 }
 
-section > h2 {
-    text-align: center;
-    font-size: 25px;
-    color: rgb(1, 9, 9);
-}
-
 .has-text-primary-light {
     font-size: 20px;
     padding-bottom: 20px;
@@ -88,6 +82,19 @@ padding: 20px;
         height: 72px;
         opacity: 0;
     }
+}
+
+.scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
 }
 
 // ! example on how to customize, skip to section "Add your own Bulma styles":
