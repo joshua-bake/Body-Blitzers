@@ -1,4 +1,6 @@
+import image from '../assets/logo-no-background.png'
 import React from 'react'
+import motto from '../assets/fitness-motto-background.jpeg'
 
 const Home = () => {
 
@@ -10,12 +12,12 @@ const Home = () => {
                         <h1 className='has-text-weight-bold pb-5 is-size-1'>Body Blitzers</h1>
                         <p className='has-text-primary-light'>Welcome to our curated online library where you can find some of the most common exercise movesets.</p>
                         <p className='has-text-primary-light'>Whether you're a beginner or veteran, there is something for everyone here regardless of skill level.</p>
-                        <img src="src/assets/fitness-motto-background.jpeg" alt="fitness-motto" />
+                        <img src={motto} alt="fitness-motto" />
                     </section>
                 </div>
                 <div className='column is-half'>
                     <figure className="image ">
-                        <img className='pr-5 mt-5' src="src/assets/logo-no-background.png" alt='logo-no-background' />
+                        <img className='pr-5 mt-5' src={image} alt='logo-no-background' />
                     </figure>
                 </div>
             </div>
