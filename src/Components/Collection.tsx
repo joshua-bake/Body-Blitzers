@@ -5,7 +5,9 @@ import ScrollToTop from 'react-scroll-to-top';
 interface Collection {
     name: string,
     image: string,
-    gifUrl: string
+    gifUrl: string,
+    target: string,
+    targeted: string
 }
 
 const Collection = () => {
@@ -23,7 +25,7 @@ const Collection = () => {
 
     React.useEffect(() => {
         async function fetchData() {
-            const resp = await fetch('https://exercisedb.p.rapidapi.com/exercises?limit=64', exercisesOptions)
+            const resp = await fetch('https://exercisedb.p.rapidapi.com/exercises?limit=1400', exercisesOptions)
             const exercises = await resp.json()
             setExercises(exercises)
         }
@@ -38,17 +40,22 @@ const Collection = () => {
     }
 
     return <section>
-        <h2 className='is-size-3 has-text-centered'>Welcome to Our Video Library</h2>
-        <div className='columns is-multiline'>
-            <ScrollToTop />
-            {(exercises)?.map(catalog => {
-                return <div className='column is-one-quarter-desktop is-one-third-tablet'>
-                    <CollectionAlbum
-                        name={catalog.name}
-                        image={catalog.gifUrl}
-                    />
-                </div>
-            })}
+        <section>
+            <h2 className='is-size-3 has-text-centered pb-3'>Welcome to Our Video Library</h2>
+        </section>
+        <div className='container'>
+            <div className='columns is-multiline'>
+                <ScrollToTop />
+                {(exercises)?.map(catalog => {
+                    return <div className='column is-one-quarter-desktop is-one-third-tablet'>
+                        <CollectionAlbum
+                            name={catalog.name}
+                            image={catalog.gifUrl}
+                            targeted={catalog.target}
+                        />
+                    </div>
+                })}
+            </div>
         </div>
     </section>
 }

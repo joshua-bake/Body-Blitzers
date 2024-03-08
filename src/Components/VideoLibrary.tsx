@@ -4,11 +4,12 @@ interface IVideoLibrary {
     name: string,
     image: string,
     instruction: string,
-    targets: string
+    targets: string,
+    secondaryTargets: string
 }
 
 // Card Library to update Exercises Page
-const VideoLibrary = ({ name, image, instruction, targets }: IVideoLibrary) => {
+const VideoLibrary = ({ name, image, instruction, targets, secondaryTargets }: IVideoLibrary) => {
 
     const [show, setShow] = React.useState(false)
     // console.log(show)
@@ -26,7 +27,8 @@ const VideoLibrary = ({ name, image, instruction, targets }: IVideoLibrary) => {
             <div className="card-image">
                 <figure className="image">
                     <img src={image} alt={name} />
-                    {show ? <h2>{targets}</h2> : ''}
+                    <button className="is-static btn-style-1 is-capitalized">Targets: {targets}</button>
+                    <br />
                     <br />
                     {show ? <p>{instruction}</p> : ''}
                 </figure>

@@ -8,7 +8,8 @@ interface Exercises {
     gifUrl: string,
     instructions: string,
     bodyPart: string,
-    target: string
+    target: string,
+    secondaryMuscles: string
 }
 
 const Exercises = () => {
@@ -27,7 +28,7 @@ const Exercises = () => {
 
     React.useEffect(() => {
         async function fetchData() {
-            const resp = await fetch('https://exercisedb.p.rapidapi.com/exercises?limit=28', exercisesOptions)
+            const resp = await fetch('https://exercisedb.p.rapidapi.com/exercises?limit=1400', exercisesOptions)
             const exercises = await resp.json()
             setExercises(exercises)
         }
@@ -72,7 +73,8 @@ const Exercises = () => {
                             name={library.name}
                             image={library.gifUrl}
                             instruction={library.instructions}
-                            targets={library.target.toUpperCase()}
+                            targets={library.target}
+                            secondaryTargets={library.secondaryMuscles}
                         />
                     </div>
                 })}
@@ -84,7 +86,8 @@ const Exercises = () => {
                             name={library.name}
                             image={library.gifUrl}
                             instruction={library.instructions}
-                            targets={library.target.toUpperCase()}
+                            targets={library.target}
+                            secondaryTargets={library.secondaryMuscles}
                         />
                     </div>
                 })}

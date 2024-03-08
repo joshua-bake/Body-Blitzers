@@ -2,10 +2,11 @@ import React from 'react'
 
 interface ICollectionAlbum {
     name: string,
-    image: string
+    image: string,
+    targeted: string
 }
 
-const CollectionAlbum = ({ name, image }: ICollectionAlbum) => {
+const CollectionAlbum = ({ name, image, targeted }: ICollectionAlbum) => {
 
     return <div>
         <div className="card is-active">
@@ -15,6 +16,7 @@ const CollectionAlbum = ({ name, image }: ICollectionAlbum) => {
             <div className="card-image">
                 <figure className="image">
                     <img src={image} alt={name} />
+                    <button className="is-static btn-style-2 is-capitalized">{targeted}</button>
                 </figure>
             </div>
         </div>
