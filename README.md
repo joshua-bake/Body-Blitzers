@@ -8,7 +8,7 @@ Body Blitzers is an online fitness library API that houses a variety of exercise
 
 ## Overview
 
-I was responsible for developing a React application that consumes a public API. The application needed to have a router and several pages connected. The entire duration of the project was 2 days and it was completed individually. Body Blitzers was created to be a video library of various exercises that you can view or search for a particular exercise.
+Body Blitzers is an online fitness library API developed as a React application. It serves as a comprehensive repository of various exercises, complete with images and instructions on how to perform them. The application allows users to browse through the exercise catalog, search for specific exercises, and view detailed instructions to ensure proper form and technique. With a user-friendly interface and intuitive navigation, Body Blitzers aims to empower users to achieve their fitness goals effectively.
 
 ## Languages Used:
 
